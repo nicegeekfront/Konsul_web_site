@@ -1,0 +1,222 @@
+@import './../base/vars';
+
+.header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1200;
+		width: 100%;
+		padding: 20px 0;
+		transition: all 0.5s ease-in-out;
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 20px;
+	}
+
+	.header__btn-contacts {
+		display: inline-block;
+		padding: 13px 30px;
+		background: $color-accent;
+		border: 1px solid $color-accent;
+		font-weight: 500;
+		text-transform: capitalize;
+		color: $color-body;
+		-webkit-transition: all 0.4s ease;
+		transition: all 0.4s ease;
+		letter-spacing: 2px;
+		&:hover {
+			background-color: transparent;
+		}
+	}
+	&__menu {
+		-webkit-transition: all 0.4s ease;
+		transition: all 0.4s ease;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+		padding: 10px 20px;
+		font-size: 18px;
+		letter-spacing: 2px;
+		cursor: pointer;
+
+		&-text {
+			color: $color-accent;
+			font-weight: 800;
+		}
+		&-btn {
+			position: relative;
+			padding-left: 10px;
+			span {
+				position: absolute;
+				left: 0;
+				display: inline-block;
+				width: 30px;
+				height: 2px;
+				background-color: $color-body;
+				transition: all 0.3s ease-in-out;
+
+			}
+			span:first-child {
+				position: absolute;
+				left: 0;
+				top: -10px;
+				width: 20px;
+			}
+			span:last-child {
+				position: absolute;
+				left: 0;
+				top: 10px;
+				width: 20px;
+			}
+		}
+
+		&:hover span {
+			width: 30px;
+		}
+		&:hover span:nth-child(2n) {
+			width: 20px;
+		}
+
+	}
+	.mobile__nav {
+		position: fixed;
+		transform: translateX(100%);
+		z-index: 1000;
+		background-color: $color-main;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: 30%;
+		padding: 50px 50px;
+		display: flex;
+		flex-direction: column;
+		align-items: left;
+		justify-content: flex-start;
+		gap: 50px;
+		transition: all 0.3s ease-in-out;
+		&-link {
+			align-self: center;
+		}
+		&-btn {
+			position: fixed;
+			top: 20px;
+			right: 20px;
+			i {
+				font-size: 30px;
+				color: $color-body;
+			}
+		}
+
+	}
+	.mobile__nav--open {
+		transform: translateX(0%);
+	}
+	.mobile__fade {
+		visibility: hidden;
+		transition: all 0.2s ease-in-out;
+	}
+	.mobile__fade--open {
+		position: fixed;
+		z-index: 800;
+		inset: 0;
+		background-color: #80684b;
+		opacity: 0.95;
+		visibility: visible;
+	}
+	.mobile__menu {
+		display: flex;
+		flex-direction: column;
+		gap: 25px;
+		&-li {
+			transition: all 0.3s ease-in-out;
+		}
+		&-link {
+			color: $color-body;
+			font-size: 26px;
+			
+		}
+		&-link--active {
+			color: $color-accent;
+		}
+
+		&-li:hover  {
+			transform: translateX(5px);
+		}
+	}
+	.mobile__contacts {
+		display: flex;
+		flex-direction: column;
+		&-link {
+			transition: all 0.3s ease-in-out;
+			padding: 10px 0;
+			i {
+				padding-right: 20px;
+				font-size: 20px;
+			}
+		}
+		&-link:hover {
+			color: $color-accent;
+		}
+	}
+
+}
+
+.header__active {
+	background-color: #233b6b;
+}
+
+@media (max-width: 1170px) {
+	.header {
+		.mobile__nav {
+			width: 40%;
+		}
+	}	
+	
+}
+
+@media (max-width: 870px) {
+	.header {
+		.mobile__nav {
+			width: 60%;
+		}
+	}	
+	
+}
+
+@media (max-width: 700px) {
+	.header {
+		.header__btn-contacts {
+			display: none;
+		}
+	}
+	
+}
+
+@media (max-width: 600px) {
+	.header {
+		.mobile__nav {
+			width: 80%;
+		}
+	}	
+	
+}
+
+@media (max-width: 400px) {
+	.header {
+		&__menu-text {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 350px) {
+	.header {
+		.mobile__nav {
+			width: 95%;
+		}
+	}	
+	
+}

@@ -1,0 +1,24 @@
+
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Inter', sans-serif;
+	font-size: 16px;
+    line-height: 1.5;
+	color: $color-body;
+	background-color: $color-body;
+	overflow-x: hidden;
+}
+
+.container	{
+	max-width: 1230px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+a {
+	color: inherit;
+	font: inherit;
+}

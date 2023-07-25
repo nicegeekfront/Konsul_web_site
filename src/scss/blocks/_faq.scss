@@ -1,0 +1,187 @@
+@import './../base/vars';
+.faq {
+    scroll-margin-top: 131px;
+    background: #F8F3EE;
+    position: relative;
+    padding: 100px 0;
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__left {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+        &-img {
+            background: #b68c5a;
+            position: relative;
+            padding-top: 30px;
+            z-index: 1;
+        }
+        &-img::before {
+            position: absolute;
+            content: "";
+            width: 40px;
+            height: 60%;
+            background: #F8F3EE;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        &-line-one {
+            position: absolute;
+            content: "";
+            width: 20px;
+            height: 25%;
+            background: #F8F3EE;
+            right: -20px;
+            top: 0;
+            z-index: 1;
+        }
+        &-line-two {
+            position: absolute;
+            content: "";
+            width: 20px;
+            height: 25%;
+            background: #F8F3EE;
+            right: -20px;
+            bottom: 0;
+            z-index: 1;
+        }
+    }
+    &__right {
+        width: 50%;
+        padding-left: 20px;
+        
+    }
+    &__row {
+        text-align: center;
+        padding-bottom: 30px;
+    }
+    &__inner {
+        background-image: url('./../img/faq/faq-bg.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        position: relative;
+        z-index: 1;
+        &::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(22, 37, 66, 0.93);
+            z-index: -1;
+        }
+        &::after {
+            position: absolute;
+            content: "";
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #b68c5a;
+            left: -50%;
+        }
+    }
+    &__accordeons {
+        background: transparent;
+        padding: 50px;
+        &-item {
+            padding-bottom: 20px;
+            cursor: pointer;
+        }
+        &-header {
+            font-family: 'Source Serif 4', serif;
+            color: $color-body;
+            margin: 0;
+            font-weight: 700;
+            font-size: 20px;
+            padding-bottom: 10px;
+            span {
+                color: $color-accent;
+                font-size: 22px;
+                padding-right: 5px;
+            }
+        }
+        &-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+            padding: 0 50px;
+            color: #ccc;
+        }
+    }
+}
+@media (max-width: 1720px) {
+    .faq__left-line-one {
+        display: none;
+    }
+    .faq__left-line-two {
+        display: none;
+    }
+    .faq__left-img::before {
+        display: none;
+    }
+    .faq__left-img {
+        position: absolute;
+        bottom: 0;
+        left: 500px;
+        background-color: transparent;
+    }
+    .faq__left-photo {
+        width: 83%;
+    }
+}
+
+@media (max-width: 1720px) {
+    .faq__left-img {
+        left: 450px;
+    }
+}
+
+@media (max-width: 1560px) {
+    .faq__left-img {
+        left: 400px;
+    }
+}
+
+@media (max-width: 1370px) {
+    .faq__left-img {
+        left: 340px;
+    }
+}
+
+@media (max-width: 1370px) {
+    .faq__left-img {
+        left: 300px;
+    }
+}
+
+@media (max-width: 1150px) {
+    .faq__left {
+        display: none;
+    }
+    .faq__inner::after {
+        display: none;
+    }
+    .faq__accordeons {
+        text-align: center;
+        min-height: 480px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        padding-left: 0;
+        padding-right: 0;
+        &-body {
+            padding: 0;
+        }
+    }
+    .faq__right {
+        padding-left: 0;
+    }
+}

@@ -1,0 +1,71 @@
+@import './../base/vars';
+
+.services {
+    scroll-margin-top: 135px;
+    background-image: url('./../img/services/s-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: black;
+    padding-bottom: 100px;
+    &__heading {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    &__slider {
+        text-align: center;
+        &-img {
+            padding-bottom: 20px;
+            z-index: 15;
+            transform: scale(0.9);
+            transition: all 0.3s ease-in-out;
+        }
+        &-heading {
+            font-weight: 600;
+            font-size: 26px;
+            margin-bottom: 10px;
+            color: $color-main;
+            font-family: 'Source Serif 4', serif;
+        }
+        &-text {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 17px;
+            line-height: 1.6;
+            padding-bottom: 20px;
+        }
+        &-link {
+            position: absolute;
+            inset: 0;
+            z-index: 5;
+        }
+        .swiper-slide:hover .services__slider-img {
+            transform: scale(1);
+        }
+    }
+}
+.swiper {
+    width: 100%;
+    height: auto;
+}
+.swiper-slide {
+    padding: 20px;
+    border: 1px solid $color-accent;
+    margin: 10px 0;
+    background: $color-body;
+    position: relative;
+}
+.swiper-wrapper {
+    padding-bottom: 40px;
+}
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: $color-accent;
+}
+
+@media (max-width: 1200px) {
+    .services__slide {
+        min-height: 520px;
+    }
+}

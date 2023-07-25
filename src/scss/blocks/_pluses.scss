@@ -1,0 +1,75 @@
+@import './../base/vars';
+
+.pluses {
+    scroll-margin-top: 131px;
+    background-image: url('./../img/pluses/counter-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 1;
+    padding: 100px 0;
+    &::before {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            content: "";
+            top: 0;
+            left: 0;
+            background: rgba(22, 37, 66, 0.93);
+            z-index: -1;
+    }
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
+    }
+    &__item {
+        background: $color-body;
+        border-radius: 20px;
+        padding: 30px;
+        min-width: 250px
+    }
+    &__item-counter {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        gap: 80px;
+        margin-bottom: 10px;
+        position: relative;
+    }
+    &__item-img {
+        width: 65px;
+        position: absolute;
+        right: 0;
+    }
+    &__item-number {
+        font-size: 46px;
+        color: $color-accent;
+        font-weight: 600;
+        display: block;
+    }
+    &__item-heading {
+        font-size: 22px;
+        color: $color-main;
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 1180px) {
+    .pluses__inner {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .pluses__item {
+        flex-basis: 45%;
+    }
+}
+
+@media (max-width: 650px) {
+    .pluses__item {
+        flex-basis: 70%;
+    }
+}

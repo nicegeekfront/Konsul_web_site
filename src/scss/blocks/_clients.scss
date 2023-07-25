@@ -1,0 +1,53 @@
+@import './../base/vars';
+
+.clients {
+    padding: 100px 0;
+    scroll-margin-top: 131px;
+    &__row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding-bottom: 40px;
+    }
+    &__inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        row-gap: 50px;
+        column-gap: 10px;
+        flex-wrap: wrap;
+    }
+    &__item {
+        flex-basis: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &-img {
+            opacity: 0.3;
+            transition: all 0.3s ease-in-out;
+        }
+        &-img:hover {
+            opacity: 1;
+        }
+    }
+}
+
+@media (max-width: 820px) {
+    .clients__item {
+        flex-basis: 30%;
+    }
+    .clients__row {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+@media (max-width: 580px) {
+    .clients__item {
+        flex-basis: 48%;
+    }
+}
